@@ -3,7 +3,7 @@
         'background-color': back_color,
         color: fore_color
     }">
-    <buttonText :level="level1White" :propText="data"/>
+    <buttonText :level="level1White" :propText="propText"/>
     </button>
 </template>
 <script>
@@ -20,11 +20,13 @@ export default {
         fore_color: {
             type: String,
             default: "#ffffff"
+        },
+        propText:{
+            type:String,
         }
     },
     data() {
         return {
-            data: "登録",
             level1White: "level1White"
         }
     }
@@ -33,7 +35,6 @@ export default {
 
 <style>
 .longLongRegist {
-    position: absolute;
     border-radius: 7px;
     border: none;
     width: 369px;

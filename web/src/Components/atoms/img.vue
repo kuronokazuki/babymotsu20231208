@@ -53,6 +53,13 @@ export default{
     border-radius: 50%;
  }
 
+ .circleMedium{
+    object-fit: cover;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+ }
+
  .evaluationStar{
     height:30px;
  }

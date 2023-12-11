@@ -35,7 +35,7 @@ export default {
     },
     mounted() {
         // APIエンドポイントのURLを設定
-        const apiUrl = '/api/search/';
+        const apiUrl = 'https://aso-2201402.main.jp/backend/api/search';
 
         // Axiosを使用してAPIにリクエストを送信
         axios

@@ -1,6 +1,6 @@
 <template>
     
-     <mainBase base="review">
+     <mainBase base="reviewGrayBase">
         <div class="tradingReviewContainer">
           <div class="reviewTitle">
             <menuText level="level2BlackBold" :label="`${name}からの評価`"></menuText>
@@ -9,7 +9,7 @@
             <tradingEvaluated></tradingEvaluated>
           </div>
         </div>
-        <div class="review">
+        <div class="reviewText">
           <paragraphText level="level2" :label="review"></paragraphText>
         </div>
      </mainBase>
@@ -68,9 +68,8 @@
     margin-left: 141px;
   }
 
-  .review{
-    position:absolute;
-    left: 5px;
+  .reviewText{
+    margin-left: 5px;
   }
   </style>
   

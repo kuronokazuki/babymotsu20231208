@@ -1,5 +1,5 @@
 <template>
-     <mainBase base="review">
+     <mainBase base="reviewGrayBase">
           <inputText className="review" :defaultText="defaultReview"></InputText>
       </mainBase>
   </template>
@@ -18,6 +18,7 @@
       inputText,
       tradingEvaluated,
       paragraphText,
+      paragraphText
     },
     data() {
       return {

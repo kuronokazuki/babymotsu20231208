@@ -55,6 +55,23 @@ export default{
     color:#444444;
 }
 
+.level3Bold{
+    font-size:16px;
+    font-family:neusa-next-std,'游ゴシック Bold', sans-serif;
+    font-weight: 700;
+    font-style: Bold;
+    color:#000000;
+}
+
+.level3{
+    font-size:16px;
+    font-family:neusa-next-std,'游ゴシック Medium', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    color:#000000;
+    margin:0;
+}
+
 </style>
 
 

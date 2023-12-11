@@ -44,7 +44,7 @@ export default{
             default:false,
         },
         categoryId:{
-            type: Number,
+            type: Number,String,
         },
         categories:{
             type:Object,

@@ -1,9 +1,9 @@
 <template>
     <div class="tradingInfomationContainer">
-        <div class="containerTitle">
+        <div class="tradingContainerTitle">
             <menuText v-for="(item,index) in listTitles" :key="index" level="level3Bold" :label="item"></menuText>
         </div>
-        <div class="containerTitle">
+        <div class="tradingContainerTitle">
             <menuText v-for="(item,index) in informationList" :key="index" level="level3" :label="item"></menuText>
         </div>
     </div>
@@ -37,7 +37,7 @@ export default{
         display: flex;
         width: 293px;
     }
-    .containerTitle{
+    .tradingContainerTitle{
         display: flex;
         flex-direction:column;
         gap:17px;

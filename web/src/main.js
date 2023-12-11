@@ -1,5 +1,5 @@
 import { createApp } from 'vue';
-import App from './Pages/TopPages.vue';
+import App from './Pages/tradingSeller.vue';
 import router from './router/';
 
 const app = createApp(App);

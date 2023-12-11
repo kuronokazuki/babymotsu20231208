@@ -1,8 +1,9 @@
 <template>
     <div v-if="tradingId === 1" class="tradingContainer">
-        <tradingBase></tradingBase>
+        <tradingBase :tradeId="1" :trader="seller"></tradingBase>
         <div>
             <div class="tradingInformation">
+                <buttonRedLong :propText="tradingButtonText"></buttonRedLong>
                 <div class="tradingHeaderTextSub">
                     <headerTextSub level="level1Bold" text="出品者情報"></headerTextSub>
                 </div>
@@ -108,6 +109,13 @@ components:{
 },
 data() {
     return {
+        buttonText:
+                    [
+                    {id:1,text:"発送を通知する"},
+                    {id:2,text:"商品を受け取りましょう。"},
+                    {id:3,text:"評価しましょう。"},
+                    {id:4,text:"取引が完了しました。"},
+                ],
         propText:"評価を更新する",
     };
   },
@@ -117,8 +125,14 @@ methods: {
 props:{
     tradingId:{
         type:Number,
-        default:3,
+        default:1,
     },
+},
+computed: {
+    tradingButtonText() {
+    const tradingStatus = this.buttonText.find((item) => item.id === this.tradingId);
+    return tradingStatus ? tradingStatus.text : ' ';
+  }
 }
 };
 </script>

@@ -55,10 +55,10 @@ export default{
 .yelloBase{
     background-color: #FFF9CE;
     width: 430px;
-    height: 114px;
+    height: 132px;
 }
 
-.review{
+.reviewGrayBase{
     width: 374px;
     min-height: 86px;
     background-color: #F1F2F3;

@@ -78,11 +78,11 @@ export default{
                 {id:"shipping_method",name:"発送オプション",isOpen:false,value:[]}
             ],
             minorCategory:[
-                {majorId:1,id:1,name:"生後０カ月",checked:false},
-                {majorId:1,id:2,name:"生後１カ月",checked:false},
-                {majorId:1,id:3,name:"生後２カ月",checked:false},
-                {majorId:1,id:4,name:"生後３カ月",checked:false},
-                {majorId:2,id:1,name:"10g",checked:false},
+                {majorId:"age",id:1,name:"生後０カ月",checked:false},
+                {majorId:"age",id:2,name:"生後１カ月",checked:false},
+                {majorId:"age",id:3,name:"生後２カ月",checked:false},
+                {majorId:"age",id:4,name:"生後３カ月",checked:false},
+                {majorId:"weight",id:1,name:"10g",checked:false},
                 {majorId:2,id:2,name:"20g",checked:false},
                 {majorId:3,id:1,name:"100cm",checked:false},
                 {majorId:3,id:2,name:"120cm",checked:false},
@@ -105,7 +105,7 @@ export default{
         },
         categoryId:{
             type:Number,
-            default:1,
+            default:0,
         },
     },
     methods: {

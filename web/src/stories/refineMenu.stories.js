@@ -1,6 +1,7 @@
 import refineMenu from '../Components/moleclese/refineMenu.vue';
 import myAcount from '../Components/moleclese/myAcount.vue';
 import comentText from '../Components/moleclese/comentText.vue';
+import refineCheckBoxMenu from '../Components/moleclese/refineCheckboxMenu.vue';
 /* コンポーネントの設定 */
 export default {
     title: 'refine',
@@ -8,6 +9,11 @@ export default {
 };
 
 /* story記述 */
+export const refineCheckBoxMenues = () => ({
+    components: { refineCheckBoxMenu },
+    template: '<refineCheckBoxMenu />'
+});
+
 export const refineMenues = () => ({
     components: { refineMenu },
     template: '<refineMenu :categoryId=1 />'

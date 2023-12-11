@@ -37,10 +37,10 @@ data() {
                 ],
                 seller:
                     [
-                        {id:1,img:"clock.svg",head:"商品を発送してください。",headSub:"発送したら、発送通知をしてください。"},
-                        {id:2,img:"clock.svg",head:"受け取り通知を待ちましょう。",headSub:"購入者様から受け取り通知が届きます。"},
-                        {id:3,img:"niconico.svg",head:"評価しましょう。",headSub:"購入者を評価しましょう。"},
-                        {id:4,img:"niconico.svg",head:"取引が完了しました。",headSub:"この度はもつべびのご利用ありがとうございました。"},
+                    {id:1,img:"clock.svg",head:"商品を発送してください。",headSub:"発送したら、発送通知をしてください。"},
+                    {id:2,img:"clock.svg",head:"受け取り通知を待ちましょう。",headSub:"購入者様から受け取り通知が届きます。"},
+                    {id:3,img:"niconico.svg",head:"評価しましょう。",headSub:"購入者を評価しましょう。"},
+                    {id:4,img:"niconico.svg",head:"取引が完了しました。",headSub:"この度はもつべびのご利用ありがとうございました。"},
                 ],
         },
         };
@@ -48,7 +48,7 @@ data() {
 props: {
     trader:{
         type:String,
-        default:'buyer',
+        default:'seller',
         },
     tradeId:{
         type:Number,

@@ -27,11 +27,14 @@ export default {
         buttonWidth: {
             type: String,
             default: "292px",
+        },
+        propText:{
+            type: String,
+            default: "ログイン",
         }
     },
     data() {
         return {
-            propText: "ログイン",
             level2White: "level2White"
         }
     }
