@@ -1,11 +1,11 @@
 <template>
-<ul class="menuList" :class="list">
-    <slot></slot>
-</ul>
+    <ul class="menuList" :class="list">
+        <slot></slot>
+    </ul>
 </template>
 
 <script>
-export default{
+export default {
     props: {
         list: {
             type: String,
@@ -21,13 +21,13 @@ export default{
     list-style: none;
 }
 
-.level1{
+.level1 {
     margin-top: 13px;
     margin-bottom: 13px;
     width: 315px;
 }
 
-.level2{
+.level2 {
     margin-top: 12px;
     margin-bottom: 12px;
     width: 382px;

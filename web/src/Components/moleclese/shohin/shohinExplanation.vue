@@ -1,9 +1,8 @@
 <template>
     <div class="exp">
-    <buttonText :level="level2Pink" :propText="text" />
+        <buttonText :level="level2Pink" :propText="text" />
         <formText :level="textFormLevel2">API実装</formText>
     </div>
-
 </template>
 
 <script>
@@ -28,7 +27,7 @@ export default {
 </script>
 
 <style>
-.exp{
+.exp {
     width: 267pt;
     height: 120pt;
     padding-left: 32pt;

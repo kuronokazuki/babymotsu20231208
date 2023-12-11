@@ -15,14 +15,12 @@
 
 <script>
 import headerText from '../atoms/headerText.vue';
-import headerTextSub from '../atoms/headerTextSub.vue';
 import profileImg from '../moleclese/profileImg.vue';
-import Img from '../atoms/img.vue';
+import Img from '../atoms/imgComp.vue';
 
 export default{
     components:{
         headerText,
-        headerTextSub,
         profileImg,
         Img,
     },

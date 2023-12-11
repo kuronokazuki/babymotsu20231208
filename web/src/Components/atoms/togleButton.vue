@@ -9,7 +9,7 @@
     props: {
       id: {
         type: Number,
-        default: "defaultId",
+        default: 1,
       },
       open: {
         type: Boolean,

@@ -2,13 +2,8 @@
       <textarea ref="resizableTextarea" :class="className" :placeholder="defaultText" :value="text" @input="autoResize"></textarea>
   </template>
   
-  <script>
-  import Img from '../atoms/img.vue';
-  
+  <script>  
   export default {
-    components: {
-      Img,
-    },
     props: {
       checkBoxLevel: {
         type: String,

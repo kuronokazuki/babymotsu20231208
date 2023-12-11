@@ -9,7 +9,7 @@ import tradingSeller from '../Pages/tradingSeller.vue';
 const routes = [
     // ルートの定義はここに
     {
-        path: '/',
+        path: '/dist/',
         name: 'top',
         component: TopPages,
     },

@@ -1,19 +1,19 @@
 <template>
     <mainBase :height="mainHeight">
-    <div class="mbImg">
-        <headerIcon />
-    </div>
-    <div class="loginForm">
-        <div class="createAcountArea">
-            <Rectangle33Radius />
+        <div class="mbImg">
+            <headerIcon />
         </div>
-        <div class="buttoIcon">
-            <ButtonRedSemicircleIconLongShadow :buttonWidth="buttonWidth" :text="text" />
+        <div class="loginForm">
+            <div class="createAcountArea">
+                <Rectangle33Radius />
+            </div>
+            <div class="buttoIcon">
+                <ButtonRedSemicircleIconLongShadow :buttonWidth="buttonWidth" :text="text" />
+            </div>
+            <div class="formConsentText">
+                <formText :level="textFormLabelBluegray">アカウント作成することで、当社の利用規約と<br>プライバシーポリシーに同意します。</formText>
+            </div>
         </div>
-        <div class="formConsentText">
-            <formText :level="textFormLabelBluegray">アカウント作成することで、当社の利用規約と<br>プライバシーポリシーに同意します。</formText>
-        </div>
-    </div>
     </mainBase>
 </template>
 
@@ -47,14 +47,16 @@ export default {
 svg#コンポーネント_128_14 {
     margin-left: 122pt;
 }
-.loginInputForm{
+
+.loginInputForm {
     margin: 25pt 37pt;
     box-shadow: 0 8pt 15pt #E7EAF0;
 }
-.loginProcess{
+
+.loginProcess {
     margin: 20pt 36pt;
 }
+
 .formConsentText {
     text-align: center;
-}
-</style>
+}</style>

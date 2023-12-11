@@ -1,18 +1,18 @@
 <template>
     <div class="tradingEvaluatedContainer">
       <div v-for="index in 5" :key="index" class="containerTitle">
-        <Img className="evaluationStarLevel2" fileName="star.svg" v-if="amount >= index"></Img>
-        <Img className="evaluationStarLevel2" fileName="starFalse.svg" v-else></Img>
+        <imgComp className="evaluationStarLevel2" fileName="star.svg" v-if="amount >= index"></imgComp>
+        <imgComp className="evaluationStarLevel2" fileName="starFalse.svg" v-else></imgComp>
       </div>
     </div>
   </template>
   
   <script>
-  import Img from './../atoms/img.vue';
+  import imgComp from '../atoms/imgComp.vue';
   
   export default {
     components: {
-      Img,
+      imgComp,
     },
     props: {
         amount:{

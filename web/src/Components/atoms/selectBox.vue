@@ -10,11 +10,7 @@
   </template>
 
   <script>
-    import Img from "../../Components/atoms/img.vue";
   export default {
-    components:{
-        Img
-    },
     props: {
       label: {
         type:String,

@@ -4,11 +4,11 @@
         <div class="center-container">
             <img src="/img/logo.png" class="shohinDetailImg">
         </div>
-            <shohinName />
-            <ShohinInformation />
-            <shohinExplanation />
-            <ShohinSellorTest />
-            <shohinDetailfooter />
+        <shohinName />
+        <ShohinInformation />
+        <shohinExplanation />
+        <ShohinSellorTest />
+        <shohinDetailfooter />
     </mainBase>
 </template>
 <script>
@@ -21,7 +21,6 @@ import mainBase from '../Components/mainBase.vue';
 import shohinDetailfooter from '../Components/moleclese/shohinDetailfooter.vue';
 
 export default {
-    name: 'shohinDetail',
     components: {
         shohinExplanation,
         ShohinInformation,
@@ -31,8 +30,8 @@ export default {
         detailHeader,
         shohinName
     },
-    data(){
-        return{
+    data() {
+        return {
             mainBase: 'mainBase',
             hei: '1210pt'
         }
@@ -46,7 +45,8 @@ export default {
     justify-content: center;
     align-items: center;
 }
-img.shohinDetailImg{
+
+img.shohinDetailImg {
     align-items: center;
     width: 218pt;
     height: 218pt;

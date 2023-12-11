@@ -1,15 +1,15 @@
 <template>
     <div :class="className">
-        <Img :className="className" :fileName="`../img/${imgName}`"></Img>
+        <imgComp :className="className" :fileName="`../img/${imgName}`"></imgComp>
     </div>
 </template>
 
 <script>
-import Img from '../atoms/img.vue';
+import imgComp from '../atoms/imgComp.vue';
 
 export default{
     components:{
-        Img,
+        imgComp,
     },
     props: {
         imgName:{

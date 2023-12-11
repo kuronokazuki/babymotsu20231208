@@ -1,15 +1,18 @@
 <template>
     <div class="sellBase">
         <div class="sellorMain">
-            <img src="/img/gorira.png" class="selimg" />
+            <img src="../../assets/gorira.png" class="selimg" />
             <div class="sellorSubMain">
                 <div class="imageText">
                     <formText :level="textFormLevel4">中野光寿</formText>
                 </div>
                 <div class="rating">
                     <!-- 評価値に応じて星を表示 -->
-                    <svg id="Rating" xmlns="http://www.w3.org/2000/svg" v-for="index in 5" :key="index" width="30" height="30">
-                    <path :class="{ 'orange-star': index <= rating }" d="M69,88.116,78.27,94,75.818,82.9,84,75.438l-10.787-.975L69,64,64.786,74.464,54,75.438,62.183,82.9,59.73,94Z" transform="translate(-54 -64)" fill="#727c8e" opacity="0.3"/>
+                    <svg id="Rating" xmlns="http://www.w3.org/2000/svg" v-for="index in 5" :key="index" width="30"
+                        height="30">
+                        <path :class="{ 'orange-star': index <= rating }"
+                            d="M69,88.116,78.27,94,75.818,82.9,84,75.438l-10.787-.975L69,64,64.786,74.464,54,75.438,62.183,82.9,59.73,94Z"
+                            transform="translate(-54 -64)" fill="#727c8e" opacity="0.3" />
                     </svg>
                     <!-- 評価値を取ってくる -->
                     <div class="evaluationValue">
@@ -59,9 +62,11 @@ export default {
 .sellorSubMain {
     padding-left: 30pt;
 }
-.buttonWhiteLight{
+
+.buttonWhiteLight {
     padding-top: 20px;
 }
+
 img.selimg {
     width: 95pt;
     height: 95pt;
@@ -77,11 +82,13 @@ img.selimg {
     width: 20px;
     height: 20px;
 }
+
 .evaluationValue {
     align-items: center;
     display: flex;
     padding-left: 14px
 }
+
 .orange-star {
     fill: #FF6969;
     opacity: 1;
