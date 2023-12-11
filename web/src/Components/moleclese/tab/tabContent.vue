@@ -44,12 +44,14 @@ export default {
                 { id: '3', component: 'tabBuyNav', level: 'level1', fill: '#515c6f' },
                 { id: '4', component: 'tabMypageNav', level: 'level1', fill: '#515c6f' }
             ],
-            show:"1"
+            show: "1"
         };
     },
     methods: {
         select(tabId) {
+            console.log("Before: ", this.show);
             this.show = tabId;
+            console.log("After: ", this.show);
             this.tabs.forEach((tab) => {
                 if (tab.id === tabId) {
                     tab.fill = '#FF6969';

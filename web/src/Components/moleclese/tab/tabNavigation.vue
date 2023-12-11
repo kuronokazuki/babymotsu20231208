@@ -18,7 +18,7 @@
         </div>
         <div class="productContainer">
             <div v-if="show === '1'" class="scrollableContent">
-                <shohinDisplay :searchData="searchData" @pushAction="tapNavi"/>
+                <shohinDisplay :searchData="searchData" @pushAction="tapNavi" />
             </div>
         </div>
         <div v-if="show === '2'">タブ2のコンテンツ</div>
@@ -31,49 +31,49 @@ import headerHome from '../headerHome.vue';
 import headerText from '../../atoms/headerText.vue';
 import shohinDisplay from '../shohin/shohinDisplay.vue';
 export default {
-        components: {
-            headerText,
-            shohinDisplay,
-            headerHome
-        },
-        data() {
-            return {
-                show: "1",
-                headerText1: "おすすめ",
-                headerText2: "マイリスト",
-                headerText3: "おもちゃ",
-                level1: 'level4',
-                level2: 'level4',
-                level3: 'level4',
-                searchData: '商品'
+    components: {
+        headerText,
+        shohinDisplay,
+        headerHome
+    },
+    data() {
+        return {
+            show: "1",
+            headerText1: "おすすめ",
+            headerText2: "マイリスト",
+            headerText3: "おもちゃ",
+            level1: 'level4',
+            level2: 'level4',
+            level3: 'level4',
+            searchData: '商品'
+        }
+    },
+    methods: {
+        select: function (num, level) {
+            this.show = num;
+            if (this.show === "1") {
+                this.level1 = level;
+                this.level2 = 'level4';
+                this.level3 = 'level4';
+                this.level4 = 'level4';
+            } else if (this.show === "2") {
+                this.level2 = level;
+                this.level1 = 'level4';
+                this.level3 = 'level4';
+                this.level4 = 'level4';
+            } else if (this.show === "3") {
+                this.level3 = level;
+                this.level2 = 'level4';
+                this.level1 = 'level4';
+                this.level4 = 'level4';
             }
         },
-        methods: {
-            select: function (num, level) {
-                this.show = num;
-                if(this.show === "1"){
-                    this.level1 = level;
-                    this.level2 = 'level4';
-                    this.level3 = 'level4';
-                    this.level4 = 'level4';
-                }else if(this.show === "2"){
-                    this.level2 = level;
-                    this.level1 = 'level4';
-                    this.level3 = 'level4';
-                    this.level4 = 'level4';
-                }else if(this.show === "3"){
-                    this.level3 = level;
-                    this.level2 = 'level4';
-                    this.level1 = 'level4';
-                    this.level4 = 'level4';
-                }
-            },
-            tapNavi(){
-                this.$emit('tapTop')
-            }
+        tapNavi() {
+            this.$emit('tapTop')
         }
     }
-    </script>
+}
+</script>
 
 
 <style scoped>
@@ -95,25 +95,35 @@ export default {
 }
 
 .productContainer {
-    overflow-y: auto; /* コンテンツがはみ出た場合にスクロールバーを表示 */
-    scrollbar-width: thin; /* Firefox 対応 */
-    -webkit-scrollbar-width: thin; /* Chrome, Safari 対応 */
-    scrollbar-color: transparent transparent; /* Firefox 対応 */
-    -webkit-scrollbar: thin; /* Chrome, Safari 対応 */
-    height: 680px;
+    overflow-y: auto;
+    /* コンテンツがはみ出た場合にスクロールバーを表示 */
+    scrollbar-width: thin;
+    /* Firefox 対応 */
+    -webkit-scrollbar-width: thin;
+    /* Chrome, Safari 対応 */
+    scrollbar-color: transparent transparent;
+    /* Firefox 対応 */
+    -webkit-scrollbar: thin;
+    /* Chrome, Safari 対応 */
+    height: 695px;
 }
 
 /* コンテンツがはみ出た場合のスクロールバーのスタイル */
 .productContainer::-webkit-scrollbar {
-    width: 6px; /* スクロールバーの幅 */
+    width: 6px;
+    /* スクロールバーの幅 */
 }
+
 .productContainer::-webkit-scrollbar-thumb {
-    background-color: transparent; /* スクロールバーの中央の色 */
+    background-color: transparent;
+    /* スクロールバーの中央の色 */
 }
 
 .productContainer::-webkit-scrollbar-track {
-    background-color: transparent; /* スクロールバーのトラックの色 */
+    background-color: transparent;
+    /* スクロールバーのトラックの色 */
 }
+
 .homeTabNav {
     display: flex;
     align-items: center;

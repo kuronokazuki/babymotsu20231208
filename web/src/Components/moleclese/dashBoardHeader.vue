@@ -1,7 +1,7 @@
 <template>
     <div class="container">
         <toggleButton :id="id" @isToggle="toggleChange" :open="isOpen">
-            <Img fileName="back.svg" className="back"  />
+            <imgComp fileName="back.svg" className="back"  />
         </toggleButton>
         <headerText level="level2" :headerText="title"></headerText>
         <div></div>
@@ -11,15 +11,13 @@
 
 <script>
 import headerText from '../atoms/headerText.vue';
-import headerTextSub from '../atoms/headerTextSub.vue';
-import Img from '../atoms/img.vue';
+import imgComp from '../atoms/imgComp.vue';
 import toggleButton from '../atoms/togleButton.vue'
 
 export default{
     components:{
         headerText,
-        headerTextSub,
-        Img,
+        imgComp,
         toggleButton,
     },
     props:{

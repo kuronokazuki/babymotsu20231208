@@ -9,7 +9,7 @@
                 <LoginText :propEmail="userMail" :propPass="userPass" />
             </div>
             <div class="buttoIcon">
-                <ButtonRedSemicircleIconLongShadow :buttonWidth="buttonWidth" :text="text" @click="handleButtonClick"/>
+                <ButtonRedSemicircleIconLongShadow :buttonWidth="buttonWidth" :text="text" @click="handleButtonClick" />
             </div>
             <div class="createLink">
                 <accountLink />
@@ -65,7 +65,7 @@ export default {
             } catch (error) {
                 console.error(error.message);
             }
-        }, 
+        },
     },
 }
 </script>
@@ -74,17 +74,20 @@ export default {
 svg#コンポーネント_128_14 {
     margin-left: 122pt;
 }
-.loginInputForm{
+
+.loginInputForm {
     margin: 25pt 37pt;
     box-shadow: 0 8pt 15pt #E7EAF0;
 }
-.loginProcess{
+
+.loginProcess {
     margin: 20pt 36pt;
 }
+
 .createLink {
     margin-top: 65pt;
 }
+
 a {
     margin-left: 116pt;
-}
-</style>
+}</style>

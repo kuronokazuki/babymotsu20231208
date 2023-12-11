@@ -24,11 +24,13 @@ export default {
     background-color: #ffffff;
     overflow-x: hidden;
 }
+
 .productContainer {
     overflow-y: auto;
     max-height: calc(100vh - 36pt);
     /* タブナビゲーションの高さを考慮 */
 }
+
 .scrollableContent {
     max-height: 100%;
     overflow-y: auto;

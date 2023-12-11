@@ -11,12 +11,10 @@
 
 <script>
 import menuText from './../atoms/menuText.vue';
-import Img from './../atoms/img.vue';
 
 export default{
     components:{
         menuText,
-        Img,
     },
     data() {
             return{

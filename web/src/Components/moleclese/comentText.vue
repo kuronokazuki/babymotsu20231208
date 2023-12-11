@@ -2,13 +2,14 @@
     <div class="comentTextBase">
         <div class="shohinNumText">
             <!-- {{   }} この部分に出品商品数を表示-->
-            <formText :level="textFormLevel3">4</formText>
+            <formText :level="textFormLevel3">{{ shohinLength }}</formText>
             <footerText :level="level1" :text="text" />
         </div>
-            <formText :level="textFormLevel3">たくさん商品を出品します！</formText>
+        <formText :level="textFormLevel3">たくさん商品を出品します！</formText>
         <div class="borderLine">
             <svg xmlns="http://www.w3.org/2000/svg" width="410" height="1" viewBox="0 0 420 1">
-            <line id="線_40" data-name="線 40" x2="410" transform="translate(0 0.5)" fill="none" stroke="#c2c2c2" stroke-width="1"/>
+                <line id="線_40" data-name="線 40" x2="410" transform="translate(0 0.5)" fill="none" stroke="#c2c2c2"
+                    stroke-width="1" />
             </svg>
         </div>
     </div>
@@ -22,26 +23,31 @@ export default {
         formText,
         footerText
     },
-    data(){
+    data() {
         return {
             text: '商品'
         }
+    },
+    props: {
+        shohinLength: String
     }
 }
 </script>
 <style>
-.shohinNumText{
+.shohinNumText {
     display: flex;
 }
-.level1{
+
+.level1 {
     display: flex;
     align-items: center;
 }
-.borderLine{
+
+.borderLine {
     display: flex;
 }
-.comentTextBase{
+
+.comentTextBase {
     padding-left: 12pt;
     padding-top: 20pt;
-}
-</style>
+}</style>

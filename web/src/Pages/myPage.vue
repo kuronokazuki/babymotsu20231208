@@ -2,8 +2,8 @@
     <mainBase :height="mainHeight" class="scrollable-container">
         <mypageHeader />
         <myAcount />
-        <comentText />
-        <shohinDisplay class="shohinList" :searchData="searchData" />
+        <comentText :shohinLength="shohin" />
+        <shohinDisplay class="shohinList" :searchData="searchData" @Action="shohinLength" :nowMypage="nowScreen" />
     </mainBase>
 </template>
 
@@ -26,34 +26,52 @@ export default {
     data() {
         return {
             mainHeight: '600pt',
-            searchData: '商品'
+            searchData: '商品',
+            shohin: 0
         };
+    },
+    props: {
+        nowScreen: String
+    },
+    methods: {
+        shohinLength(value) {
+            this.shohin = value;
+        }
     }
 };
 </script>
 
 <style>
-.shohinList{
+.shohinList {
     padding-top: 20pt;
 }
+
 .scrollable-container {
-    overflow-y: auto; /* コンテンツがはみ出た場合にスクロールバーを表示 */
-    scrollbar-width: thin; /* Firefox 対応 */
-    -webkit-scrollbar-width: thin; /* Chrome, Safari 対応 */
-    scrollbar-color: transparent transparent; /* Firefox 対応 */
-    -webkit-scrollbar: thin; /* Chrome, Safari 対応 */
+    overflow-y: auto;
+    /* コンテンツがはみ出た場合にスクロールバーを表示 */
+    scrollbar-width: thin;
+    /* Firefox 対応 */
+    -webkit-scrollbar-width: thin;
+    /* Chrome, Safari 対応 */
+    scrollbar-color: transparent transparent;
+    /* Firefox 対応 */
+    -webkit-scrollbar: thin;
+    /* Chrome, Safari 対応 */
 }
 
 /* コンテンツがはみ出た場合のスクロールバーのスタイル */
 .scrollable-container::-webkit-scrollbar {
-    width: 6px; /* スクロールバーの幅 */
+    width: 6px;
+    /* スクロールバーの幅 */
 }
 
 .scrollable-container::-webkit-scrollbar-thumb {
-    background-color: transparent; /* スクロールバーの中央の色 */
+    background-color: transparent;
+    /* スクロールバーの中央の色 */
 }
 
 .scrollable-container::-webkit-scrollbar-track {
-    background-color: transparent; /* スクロールバーのトラックの色 */
+    background-color: transparent;
+    /* スクロールバーのトラックの色 */
 }
 </style>

@@ -1,7 +1,7 @@
 <template>
     <Base base="yelloBase">
         <div class="tradingBaseContainer">
-            <Img :fileName="tradingStatusImg" className="clock"></Img>   
+            <imgComp :fileName="tradingStatusImg" className="clock"></imgComp>   
             <div class="header">     
                 <HeaderText level="level1" :headerText="tradingStatusHead"></HeaderText>
             </div>
@@ -16,13 +16,13 @@
 import Base from './../atoms/mainBase.vue';
 import HeaderText from './../atoms/headerText.vue';
 import HeaderTextSub from './../atoms/headerTextSub.vue';
-import Img from './../atoms/img.vue';
+import imgComp from '../atoms/imgComp.vue';
 
 export default{
 components:{
     Base,
     HeaderText,
-    Img,
+    imgComp,
     HeaderTextSub
 },
 data() {

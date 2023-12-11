@@ -1,28 +1,28 @@
 <template>
     <mainBase :height="mainHeight">
         <div v-if="tapDetail">
-        <tabContent>
-            <template v-slot:1>
-                <!-- 1番目のタブのコンテンツ -->
-                    <tabNavigation @tapTop="tapJudg"/>
-            </template>
-            <template v-slot:2>
-                <!-- 2番目のタブのコンテンツ -->
-                <div>
-                    <searchPage />
-                </div>
-            </template>
-            <template v-slot:3>
-                <!-- 3番目のタブのコンテンツ -->
-                <div>Content for Tab 3</div>
-            </template>
-            <template v-slot:4>
-                <!-- 4番目のタブのコンテンツ -->
-                <div>
-                    <myPage />
-                </div>
-            </template>
-        </tabContent>
+            <tabContent>
+                <template v-slot:1>
+                    <!-- 1番目のタブのコンテンツ -->
+                    <tabNavigation @tapTop="tapJudg" />
+                </template>
+                <template v-slot:2>
+                    <!-- 2番目のタブのコンテンツ -->
+                    <div>
+                        <searchPage />
+                    </div>
+                </template>
+                <template v-slot:3>
+                    <!-- 3番目のタブのコンテンツ -->
+                    <div>Content for Tab 3</div>
+                </template>
+                <template v-slot:4>
+                    <!-- 4番目のタブのコンテンツ -->
+                    <div>
+                        <myPage :nowScreen="judg" />
+                    </div>
+                </template>
+            </tabContent>
         </div>
         <div v-else>
             <router-view></router-view>
@@ -49,6 +49,7 @@ export default {
         return {
             tabJudg: true,
             mainHeight: window.innerHeight + 'px', // 画面の高さを取得して設定
+            judg: 'mypage'
         };
     },
     mounted() {
@@ -59,12 +60,12 @@ export default {
         updateHeight() {
             this.mainHeight = window.innerHeight + 'px';
         },
-        tapJudg(){
+        tapJudg() {
             return this.tabJudg = false;
         }
     },
     computed: {
-        tapDetail(){
+        tapDetail() {
             return this.tabJudg == true;
         }
     }

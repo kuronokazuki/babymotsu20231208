@@ -16,7 +16,6 @@
   </template>
   
   <script>
-  import Img from './../atoms/img.vue';
   import mainBase from './../atoms/mainBase.vue';
   import menuText from './../atoms/menuText.vue';
   import tradingEvaluated from './../moleclese/tradingEvaluated.vue';
@@ -24,7 +23,6 @@
   
   export default {
     components: {
-      Img,
       mainBase,
       menuText,
       tradingEvaluated,

@@ -2,7 +2,7 @@
     <div class="sellBase">
         <buttonText :level="level2Pink" :propText="text" />
         <div class="sellorMain">
-            <img src="/img/logo.png" class="selimg" />
+            <img src="../../../assets/logo.png" class="selimg" />
             <div class="sellorSubMain">
                 <div class="imageText">mitsukun</div>
                 <div class="sellorEvaluation">
@@ -28,7 +28,7 @@ import buttonText from '../../atoms/buttonText.vue';
 
 export default {
     components: {
-        buttonText,
+        buttonText
     },
     data() {
         return {
@@ -37,14 +37,15 @@ export default {
             textFormLevel2: 'textFormLevel2',
             text: "出品者",
         }
-    }  
+    }
 };
 </script>
 
 <style scoped>
-.sellBase{
+.sellBase {
     padding-left: 32pt;
 }
+
 .sellorAverage {
     font-size: 6pt;
     position: absolute;
@@ -54,13 +55,16 @@ export default {
     font-weight: 900;
     color: #ffffff;
 }
+
 .sellorMain {
     display: flex;
     padding-top: 10pt;
 }
+
 .sellorSubMain {
     padding-left: 30pt;
 }
+
 .sellorImg {
     display: flex;
     position: relative;
@@ -72,10 +76,10 @@ img.selimg {
     overflow: hidden;
     border-radius: 50%;
 }
+
 .imageText {
     bottom: 0;
     left: 0;
     right: 0;
     text-align: center;
-}
-</style>
+}</style>

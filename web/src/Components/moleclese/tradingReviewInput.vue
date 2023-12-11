@@ -5,20 +5,13 @@
   </template>
   
   <script>
-  import Img from './../atoms/img.vue';
   import mainBase from './../atoms/mainBase.vue';
   import inputText from './../atoms/inputText.vue';
-  import tradingEvaluated from './../moleclese/tradingEvaluated.vue';
-  import paragraphText from './../atoms/paragraphText.vue';
-  
+
   export default {
     components: {
-      Img,
       mainBase,
       inputText,
-      tradingEvaluated,
-      paragraphText,
-      paragraphText
     },
     data() {
       return {
