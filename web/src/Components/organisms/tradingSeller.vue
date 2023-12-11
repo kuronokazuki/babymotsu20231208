@@ -4,6 +4,7 @@
         <div>
             <div class="tradingInformation">
                 <buttonRedLong :propText="tradingButtonText"></buttonRedLong>
+                <buyerInformation></buyerInformation>
                 <div class="tradingHeaderTextSub">
                     <headerTextSub level="level1Bold" text="出品者情報"></headerTextSub>
                 </div>
@@ -11,7 +12,7 @@
             </div>
             <div class="tradingInformation">
                 <div class="tradingHeadevscode-file://vscode-app/c:/Users/owner/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/code/electron-sandbox/workbench/workbench.htmlrTextSub">
-                        <headerTextSub level="level1Bold" text="購入者情報"></headerTextSub>
+                        <headerTextSub level="level1Bold" text="商品情報"></headerTextSub>
                 </div>
                 <tradingInformation></tradingInformation>
             </div>
@@ -21,12 +22,8 @@
     <div v-else-if="tradingId === 2" class="tradingContainer">
         <tradingBase :tradeId="2"></tradingBase>
         <div>
-            <buttonRedLong></buttonRedLong>
+            <buyerInformation></buyerInformation>
             <div class="tradingInformation">
-                <div class="tradingHeaderTextSub">
-                    <headerTextSub level="level1Bold" text="出品者情報"></headerTextSub>
-                </div>
-                <profileLinkSmall></profileLinkSmall>
             </div>
             <div class="tradingInformation">
                 <div class="tradingHeadevscode-file://vscode-app/c:/Users/owner/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/code/electron-sandbox/workbench/workbench.htmlrTextSub">
@@ -41,23 +38,10 @@
     <div v-else-if="tradingId === 3" class="tradingContainer">
         <tradingBase :tradeId="3"></tradingBase>
         <div>
-            <tradingReview></tradingReview>
+            <tradingEvaluation></tradingEvaluation>
             <headerTextSub level="level3" text="商品の評価コメントを更新しましょう！"></headerTextSub>
-            <selectBox></selectBox>
             <tradingReviewInput></tradingReviewInput>
             <buttonRedLong :propText="propText"></buttonRedLong>
-            <div class="tradingInformation">
-                <div class="tradingHeaderTextSub">
-                    <headerTextSub level="level1Bold" text="出品者情報"></headerTextSub>
-                </div>
-                <profileLinkSmall></profileLinkSmall>
-            </div>
-            <div class="tradingInformation">
-                <div class="tradingHeadevscode-file://vscode-app/c:/Users/owner/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/code/electron-sandbox/workbench/workbench.htmlrTextSub">
-                        <headerTextSub level="level1Bold" text="商品情報"></headerTextSub>
-                </div>
-                <profileLinkSmall></profileLinkSmall>
-            </div>
         </div>
     </div>
 
@@ -65,13 +49,9 @@
         <tradingBase :tradeId="4"></tradingBase>
         <div>
             <tradingReview></tradingReview>
-            <headerTextSub level="level3" text="商品の評価コメントを更新しましょう！"></headerTextSub>
-            <selectBox></selectBox>
-            <tradingReviewInput></tradingReviewInput>
-            <buttonRedLong :propText="propText"></buttonRedLong>
             <div class="tradingInformation">
                 <div class="tradingHeaderTextSub">
-                    <headerTextSub level="level1Bold" text="出品者情報"></headerTextSub>
+                    <headerTextSub level="level1Bold" text="購入者情報"></headerTextSub>
                 </div>
                 <profileLinkSmall></profileLinkSmall>
             </div>
@@ -81,6 +61,7 @@
                 </div>
                 <profileLinkSmall></profileLinkSmall>
             </div>
+            <tradingInformation></tradingInformation>
         </div>
     </div>
     
@@ -95,6 +76,8 @@ import buttonRedLong from '../atoms/ComponentButton/ButtonRedLong.vue';
 import tradingReview from '../moleclese/tradingReview.vue';
 import selectBox from '../atoms/selectBox.vue';
 import tradingReviewInput from '../moleclese/tradingReviewInput.vue';
+import buyerInformation from '../moleclese/buyerInformation.vue';
+import tradingEvaluation from '../moleclese/tradingEvaluation.vue';
 
 export default{
 components:{
@@ -105,7 +88,9 @@ components:{
     buttonRedLong,
     tradingReview,
     selectBox,
-    tradingReviewInput
+    tradingReviewInput,
+    buyerInformation,
+    tradingEvaluation,
 },
 data() {
     return {
@@ -125,7 +110,7 @@ methods: {
 props:{
     tradingId:{
         type:Number,
-        default:1,
+        default:4,
     },
 },
 computed: {
