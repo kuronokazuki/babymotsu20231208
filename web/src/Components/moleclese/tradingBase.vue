@@ -48,7 +48,7 @@ data() {
 props: {
     trader:{
         type:String,
-        default:'seller',
+        default:'buyer',
         },
     tradeId:{
         type:Number,

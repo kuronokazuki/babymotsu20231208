@@ -30,7 +30,6 @@
   <style scoped>
   .tradingEvaluationContainer {
     display: flex;
-    width: 293px;
     gap: 9.5px;
   }
   .containerTitle {
