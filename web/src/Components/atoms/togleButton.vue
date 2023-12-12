@@ -19,7 +19,7 @@
     methods: {
       toggleMenu() {
         this.$emit('isToggle',this.id,!this.open);
-        console.log(this.open);
+        console.log(this.id,this.open);
       },
     },
   };

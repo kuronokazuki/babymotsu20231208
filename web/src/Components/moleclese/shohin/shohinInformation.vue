@@ -96,7 +96,8 @@ export default {
 }
 </script>
 
-<style>.level2Pink {
+<style>
+.level2Pink {
     width: 248pt;
 }
 

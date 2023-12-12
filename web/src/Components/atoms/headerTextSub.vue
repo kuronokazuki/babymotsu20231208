@@ -39,6 +39,14 @@ export default{
     color:#FF6969;
 }
 
+.level2PinkHeader{
+    font-size:15px;
+    font-family:neusa-next-std,'游ゴシック Medium', sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color:#FF6969;
+}
+
 .level1{
     font-size:17px;
     font-family:neusa-next-std,'游ゴシック Medium', sans-serif;

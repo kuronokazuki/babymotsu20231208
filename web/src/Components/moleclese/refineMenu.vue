@@ -1,7 +1,7 @@
 <template>
-    <div class="container" v-if="categoryId === age || categoryId === 2 || categoryId === 3 || categoryId === 4" @onClick="" >
+    <div class="container" v-if="categoryId === 1 || categoryId === 2 || categoryId === 3 || categoryId === 4 || categoryId === 5 || categoryId === 6 || categoryId === 8 || categoryId === 9"  @onClick="" >
         <menuText level="level1" label="すべて" />
-        <div v-for="item,index in filteredCategories" :key="index" :class="{ 'border-top': index === 0, 'border-bottom': index !== items.length - 1 }">
+        <div v-for="item,index in filteredItems" :key="index" :class="{ 'border-top': index === 0, 'border-bottom': index !== items.length - 1 }">
             <checkInput checkBoxLevel="checkBoxGray" class="containerLevel1" :majorId="item.majorId" :id="item.id" :checked="item.checked" @change="handleCheckboxChange">
                 <formText level="textFormLabelGrayBlack"  :labelId="item.id">
                     {{ item.name }}
@@ -10,13 +10,29 @@
         </div>
     </div>
 
-    <div class="container" v-else-if="categoryId === 5">
+    <div class="container" v-else-if="categoryId === false">
         <menuText level="level1" label="すべて" />
-        <div v-for="item,index in filteredCategories" :key="index" :class="{ 'border-top': index === 0, 'border-bottom': index !== items.length - 1, [menu]: true  }">
-            <menuText level="level1" :label=item.name />
+        <div v-for="item,index in filteredItems" :key="index" :class="{ 'border-top': index === 0, 'border-bottom': index !== items.length - 1, [menu]: true  }">
+            <toggleButton :id="item.id" @isToggle="toggleChangeSubCategory">
+                <menuText level="level1" :label=item.name />
+            </toggleButton>
             <Img fileName="next.svg" clasName="next" />
         </div>
-    </div>  
+    </div>
+
+    <div class="container" v-if="categoryId === 7">
+        <menuText level="level1" label="すべて" />
+        <div v-for="item,index in filteredItems" :key="index" :class="{ 'border-top': index === 0, 'border-bottom': index !== items.length - 1 }">
+            <checkInput checkBoxLevel="checkBoxGray" class="containerLevel1" :majorId="item.majorId" :id="item.id" :checked="item.checked" @change="handleCheckboxChange">
+                <div class="colorCircle" @click="testComponent(item)">
+                    <colorCircle :circleColor="item.colorCode"></colorCircle>
+                </div>
+                <formText level="textFormLabelGrayBlack"  :labelId="item.id">
+                    {{ item.name }}
+                </formText>
+            </checkInput>
+        </div>
+    </div>
 
     <div class="container" v-else-if="categoryId === 0">
         <formText level="textFormLabelGrayLevel2">
@@ -28,6 +44,11 @@
                 <div class="majorCategoryMenu" :id="item.id">
                     <menuText level="level1" :label=item.name />
                     <menuText level="level3False" label="指定しない" v-if="item.value.length === 0" />
+                    <div class="minorCategoryItemColor" v-else-if="item.id === 7">
+                        <div v-for=" minorCategory,index in item.value" class="minorCategoryItemColorCircle">
+                            <colorCircle :circleColor="this.items.minorCategory.filter(item => item.id === minorCategory)[item.id-1].colorCode "/>
+                        </div>
+                    </div>
                     <div class="minorCategoryItem" v-else>
                         <div v-for="minorCategory,index in item.value">
                             <menuText level="level3" :label="this.items.minorCategory.filter(item => item.id === minorCategory)[item.id-1].name " />
@@ -45,9 +66,10 @@
 import formText from '../atoms/formText.vue';
 import menuText from '../atoms/menuText.vue';
 import checkInput from '../atoms/checkInput.vue';
-import Img from '../atoms/img.vue';
+import Img from '../atoms/imgComp.vue';
 import textForm from '../atoms/RectangleNotIncludedRadius.vue';
 import toggleButton from '../atoms/togleButton.vue';
+import colorCircle from '../atoms/colorCircle.vue';
 export default{
     components:{
         formText,
@@ -56,6 +78,7 @@ export default{
         Img,
         textForm,
         toggleButton,
+        colorCircle
     },
     data() {
         return{
@@ -67,45 +90,53 @@ export default{
         items:{
             type:Object,
             default:() => ({majorCategory:
-                [{id:"age",name:"月齢",isOpen:false,value:[]},
-                {id:"weight",name:"体重",isOpen:false,value:[]},
-                {id:"height",name:"身長",isOpen:false,value:[]},
-                {id:"category",name:"カテゴリ",isOpen:false,value:[]},
-                {id:"bland",name:"ブランド",isOpen:false,value:[]},
-                {id:"product_condition",name:"商品の状態",isOpen:false,value:[]},
-                {id:"color",name:"colors",isOpen:false,value:[]},
-                {id:"shipping_fee_responsibility",name:"配送料の負担",isOpen:false,value:[]},
-                {id:"shipping_method",name:"発送オプション",isOpen:false,value:[]}
+                [{id:1,name:"月齢",isOpen:false,value:[]},
+                {id:2,name:"体重",isOpen:false,value:[]},
+                {id:3,name:"身長",isOpen:false,value:[]},
+                {id:4,name:"カテゴリ",isOpen:false,value:[]},
+                {id:5,name:"ブランド",isOpen:false,value:[]},
+                {id:6,name:"商品の状態",isOpen:false,value:[]},
+                {id:7,name:"色",isOpen:false,value:[]},
+                {id:8,name:"配送料の負担",isOpen:false,value:[]},
+                {id:9,name:"発送オプション",isOpen:false,value:[]}
             ],
             minorCategory:[
-                {majorId:"age",id:1,name:"生後０カ月",checked:false},
-                {majorId:"age",id:2,name:"生後１カ月",checked:false},
-                {majorId:"age",id:3,name:"生後２カ月",checked:false},
-                {majorId:"age",id:4,name:"生後３カ月",checked:false},
-                {majorId:"weight",id:1,name:"10g",checked:false},
+                {majorId:1,id:1,name:"生後０カ月",checked:false},
+                {majorId:1,id:2,name:"生後１カ月",checked:false},
+                {majorId:1,id:3,name:"生後２カ月",checked:false},
+                {majorId:1,id:4,name:"生後３カ月",checked:false},
+                {majorId:2,id:1,name:"10g",checked:false},
                 {majorId:2,id:2,name:"20g",checked:false},
                 {majorId:3,id:1,name:"100cm",checked:false},
                 {majorId:3,id:2,name:"120cm",checked:false},
-                {majorId:4,id:1,name:"あ",checked:false},
-                {majorId:4,id:2,name:"い",checked:false},
-                {majorId:5,id:1,name:"高級ブランド",checked:false},
-                {majorId:5,id:2,name:"偽ブランド",checked:false},
+                {majorId:4,id:1,name:"ベビー服(～100cm)",checked:false},
+                {majorId:4,id:2,name:"キッズ服(～160cm)",checked:false},
+                {majorId:5,id:1,name:"ベビー服(～100cm)",checked:false},
+                {majorId:5,id:2,name:"キッズ服(～160cm)",checked:false},
                 {majorId:6,id:1,name:"良い",checked:false},
                 {majorId:6,id:2,name:"ダメ",checked:false},
-                {majorId:7,id:1,name:"黒",checked:false},
-                {majorId:7,id:2,name:"白",checked:false},
+                {majorId:7,id:1,name:"黒",checked:false,colorCode:'#36BC06'},
+                {majorId:7,id:2,name:"白",checked:false,colorCode:'#999999'},
                 {majorId:8,id:1,name:"配送社が負担",checked:false},
                 {majorId:8,id:2,name:"購入者が負担",checked:false},
                 {majorId:9,id:1,name:"やまと",checked:false},
                 {majorId:9,id:2,name:"くろねこ",checked:false},
+            ],
+            subCategory:[
+                {minorId:1,id:1,name:"生後０カ月",checked:false},
+                {minorId:1,id:2,name:"生後１カ月",checked:false},
+                {minorId:1,id:3,name:"生後２カ月",checked:false},
+                {minorId:1,id:4,name:"生後３カ月",checked:false},
+                {minorId:2,id:1,name:"10g",checked:false},
+                {minorId:2,id:2,name:"20g",checked:false},
+                {minorId:3,id:1,name:"100cm",checked:false},
+                {minorId:3,id:2,name:"120cm",checked:false},
+                {minorId:4,id:1,name:"あ",checked:false},
             ]}),
-        },
-        categories:{
-            type:Object,
         },
         categoryId:{
             type:Number,
-            default:0,
+            default:1,
         },
     },
     methods: {
@@ -117,10 +148,16 @@ export default{
             // イベントを発火する
             this.$emit('isOpen', { majorId, isOpen });
         },
+        testComponent(item){
+            console.log(item);
+        },
+        toggleChangeSubCategory(minorId,isOpen){
+            this.$emit('isOpenSub1', { minorId, isOpen });
+        }
     },
     computed: {
-    filteredCategories() {
-      return this.categories.codeMaster.filter(item => item.table === this.categoryId);
+    filteredItems() {
+      return this.items.minorCategory.filter(item => item.majorId === this.categoryId);
     },
   },
 };
@@ -136,6 +173,15 @@ export default{
     flex-direction: column;
     gap: 8px;
 }
+
+.minorCategoryItemColor{
+    display: flex;
+}
+
+.minorCategoryItemColorCircle{
+    margin-left: -13px;
+}
+
 .minorCategoryMenu{
     display: flex;
     align-items: center;

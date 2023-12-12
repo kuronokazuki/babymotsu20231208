@@ -1,4 +1,4 @@
-import Img from '../Components/atoms/img.vue';
+import Img from '../Components/atoms/imgComp.vue';
 /* コンポーネントの設定 */
 export default {
     title: 'Img',

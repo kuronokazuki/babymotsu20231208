@@ -9,7 +9,7 @@
 </template>
 
 <script>
-import Img from '../atoms/img.vue';
+import Img from '../atoms/imgComp.vue';
 
 export default {
   components: {

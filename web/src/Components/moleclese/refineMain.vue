@@ -12,14 +12,14 @@
         :categoryId="categoryId"
         @isOpen="toggleChange"
         @change1="handleMenuChange"
-        :categories="categories"
+        @isOpenSub1="toggleChangeSubCategory"
         ></Menu>
     </Base>
 </template>
 
 <script>
 import Header from './refineHeader.vue';
-import Menu from './refineCheckboxMenu.vue';
+import Menu from './refineMenu.vue';
 import Base from '../atoms/mainBase.vue';
 export default{
     components:{
@@ -68,9 +68,6 @@ export default{
                 {majorId:9,id:2,name:"くろねこ",checked:false},
             ]}),
         },
-        categories:{
-            type:Object,
-        },
         isOpen:{
             type:Boolean,
             default:false,
@@ -79,11 +76,11 @@ export default{
     computed: {
         majorCategoryName() {
             const majorCategory = this.items.majorCategory.find(item => item.id === this.categoryId);
-            return majorCategory ? majorCategory.name : ' ';
+            return majorCategory ? majorCategory.name : '';
         },
         majorCategoryId() {
             const majorCategory = this.items.majorCategory.find(item => item.id === this.categoryId);
-            return majorCategory ? majorCategory.id : ' ';
+            return majorCategory ? majorCategory.id : '';
         },
     },
     methods: {
@@ -94,8 +91,11 @@ export default{
         toggleChange({majorId,isOpen}) {
             // イベントを発火する
             this.$emit('isOpen2', { majorId, isOpen });
-            console.log('isOpen');
+            console.log(isOpen);
         },
+        toggleChangeSubCategory({ minorId, isOpen }){
+            this.$emit('isOpenSub2',{minorId, isOpen});
+        }
   },
 };
 </script>

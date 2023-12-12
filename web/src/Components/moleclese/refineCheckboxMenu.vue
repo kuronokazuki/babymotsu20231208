@@ -15,7 +15,7 @@
 import formText from '../atoms/formText.vue';
 import menuText from '../atoms/menuText.vue';
 import checkInput from '../atoms/inputCheckbox.vue';
-import Img from '../atoms/img.vue';
+import Img from '../atoms/imgComp.vue';
 import textForm from '../atoms/RectangleNotIncludedRadius.vue';
 import toggleButton from '../atoms/togleButton.vue';
 export default{

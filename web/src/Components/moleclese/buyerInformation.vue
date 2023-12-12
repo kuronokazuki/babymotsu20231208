@@ -12,7 +12,7 @@
 
 <script>
 import menuText from './../atoms/menuText.vue';
-import Img from './../atoms/img.vue';
+import Img from './../atoms/imgComp.vue';
 import headerText from './../atoms/headerText.vue';
 
 export default{
